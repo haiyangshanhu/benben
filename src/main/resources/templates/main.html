@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+    <title>主页</title>
+</head>
+<body>
+<form action="/login" method="get">
+                <table cellspacing="0" width="380px">
+                    <tr>
+                        <td>
+                            <h3>用户名:</h3>
+                        </td>
+                        <td><input type="text" th:value="${username}" name="username" id="username" placeholder="请输入用户名"
+                                class="myborder1" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3>密 码:</h3>
+                        </td>
+                        <td><input type="password" th:value="${password}" name="password" id="password"
+                                placeholder="请输入密码" class="myborder1" />
+                        </td>
+                    </tr>
+                </table><br>
+                <input type="submit" id="login" value="登        录">
+                <br><br>
+                <a1>
+                    <a th:href="@{/register}">我要注册</a>
+                </a1>
+                <a2>
+                    <a th:href="@{/findPassword}">忘记密码</a>
+                </a2>
+                <p th:if="${errorMessage}" style="color: red;" th:text="${errorMessage}">Error Message</p>
+            </form>
+</body>
+</html>
